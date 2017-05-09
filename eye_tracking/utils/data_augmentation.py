@@ -48,30 +48,26 @@ def mirror(img):
     """Vertical symmetry
     """
     yield img
-    img = np.fliplr(img)
-    yield img
+    yield np.fliplr(img)
 
 
 def bilateral(img):
     """Apply bilateral filter
     """
     yield img
-    img = denoise_bilateral(img, sigma_spatial=2, multichannel=True)
-    yield img
+    yield denoise_bilateral(img, sigma_spatial=2, multichannel=True)
 
 def noise(img):
     """Add gaussian noise
     """
     yield img
-    img = random_noise(img, mode='gaussian', var=0.01)
-    yield img
+    yield random_noise(img, mode='gaussian', var=0.01)
 
 def equalize(img):
     """Equalize histogram
     """
     yield img
-    img = equalize_hist(img, nbins=256, mask=None)
-    yield img
+    yield equalize_hist(img, nbins=256, mask=None)
 
 
 def loop(data_list):
