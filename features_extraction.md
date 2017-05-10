@@ -96,9 +96,19 @@ Inside the folder, there 2 images per datum (raw dataset picture).
 * Size is 20x30 pixels.
 * This image is linked once from `features.csv`.
 
+#### Results
+4/3132=0.1% faces not found
 
 ### Extraction with Microsoft Cognitive
 The program `eye_tracking/features01_cognitive.py` takes the raw dataset images and the features from MS Cognitive and generates a suitable dataset in the specified directory.
 
+#### Results
+9/3132=0.3% faces not found
 
 ### Extraction with OpenCV
+```
+python features01_opencv.py
+```
+
+#### Results:
+2607/3132=83% eyes not found
